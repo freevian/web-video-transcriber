@@ -5,6 +5,7 @@ Get the most out of online videos in minutes, not hours.
 For a detailed video guide, visit [your-link-here].
 
 ---
+Note: On first run, Windows may warn you about an "unrecognized app" because this script is unsigned. Click “More info” and then “Run anyway” to continue.
 
 ## Quick Setup
 
