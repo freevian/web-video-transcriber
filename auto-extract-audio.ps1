@@ -8,6 +8,7 @@ if (-not (Test-Path $OUTDIR)) { New-Item -ItemType Directory -Path $OUTDIR | Out
 
 $yt_dlp = Join-Path $scriptPath "yt-dlp.exe"
 $transcribe_cli = Join-Path $scriptPath "TranscribeCS\TranscribeCS.exe"
+$nircmd = Join-Path $scriptPath "nircmd.exe"
 
 # --- Load Configuration ---
 $configFile = Join-Path $scriptPath "config.json"
@@ -151,6 +152,11 @@ while ($true) {
     } else {
         $txtPath = [System.IO.Path]::ChangeExtension($audioFilePath, ".txt")
         Write-Green "✨ Transcription successful! Output saved to: `"$txtPath`""
+
+        # --- Notify user on completion ---
+        Write-Cyan "🔔 Transcription complete! Notifying user..."
+        & $nircmd win activate title "🚀 Freevian Transcriber"
+        & $nircmd beep 800 300
     }
     Write-Host ""
 }

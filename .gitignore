@@ -1,0 +1,11 @@
+# Ignore all files within the models directory
+models/*
+
+# Un-ignore the .gitkeep file to keep the directory in the repository
+!models/.gitkeep
+
+# Ignore common build outputs and temporary files
+target/*
+*.log
+*.tmp
+*.bak 
